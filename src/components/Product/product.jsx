@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
 	StyledAddButton,
 	StyledCircleButton,
@@ -14,22 +13,28 @@ import {
 	StyledTitle
 } from './product.styles';
 
-const Product = ({ product, addToCart }) => {
-	const { imgDesk, imgTab, imgMob, alt, tag, name, price } = product;
+const Product = ({
+	product,
+	addToCart,
+	cart,
+	setCart,
+	removeItem,
+	isProductInCart
+}) => {
+	const { id, imgDesk, imgTab, imgMob, alt, tag, name, price } = product;
 
-	const [quantity, setQuantity] = useState(0);
+	const productInCart = isProductInCart(id, cart);
 
-	const showQuantityButton = () => {
-		addToCart(product);
-		setQuantity(1);
+	const incrementQuantity = () => {
+		productInCart.quantity++;
+		setCart([...cart]);
 	};
-
-	const increaseQuantity = () => setQuantity(quantity + 1);
-	const decreaseQuantity = () => {
-		if (quantity > 1) {
-			setQuantity(quantity - 1);
+	const decrementQuantity = () => {
+		productInCart.quantity--;
+		if (productInCart.quantity === 0) {
+			removeItem(productInCart.id, cart, setCart);
 		} else {
-			setQuantity(0);
+			setCart([...cart]);
 		}
 	};
 
@@ -42,25 +47,29 @@ const Product = ({ product, addToCart }) => {
 					<source media='(min-width:320px)' srcSet={imgMob} />
 					<StyledProductImg src={imgMob} alt={alt}></StyledProductImg>
 				</picture>
-				<StyledQuantityButton>
-					<StyledCircleButtonMinus>
-						<img
-							src='public/assets/images/icon-decrement-quantity.svg'
-							alt='Remove one'
-						/>
-					</StyledCircleButtonMinus>
-					1
-					<StyledCircleButton>
-						<img
-							src='/assets/images/icon-increment-quantity.svg'
-							alt='Add one more'
-						/>
-					</StyledCircleButton>
-				</StyledQuantityButton>
-				<StyledAddButton onClick={() => addToCart(product)}>
-					<StyledIconCart src='/assets/images/icon-add-to-cart.svg' /> Add to
-					Cart
-				</StyledAddButton>
+				{productInCart && (
+					<StyledQuantityButton>
+						<StyledCircleButtonMinus onClick={() => decrementQuantity()}>
+							<img
+								src='public/assets/images/icon-decrement-quantity.svg'
+								alt='Remove one'
+							/>
+						</StyledCircleButtonMinus>
+						{productInCart.quantity}
+						<StyledCircleButton onClick={() => incrementQuantity()}>
+							<img
+								src='/assets/images/icon-increment-quantity.svg'
+								alt='Add one more'
+							/>
+						</StyledCircleButton>
+					</StyledQuantityButton>
+				)}
+				{!productInCart && (
+					<StyledAddButton onClick={() => addToCart(product)}>
+						<StyledIconCart src='/assets/images/icon-add-to-cart.svg' /> Add to
+						Cart
+					</StyledAddButton>
+				)}
 			</StyledProductBox>
 			<StyledProductInfo>
 				<StyledTag>{tag}</StyledTag>

@@ -13,7 +13,7 @@ const App = () => {
 
 	/*Para añadir productos al carrito*/
 	const addToCart = product => {
-		setCart([...cart, product]);
+		setCart([...cart, { ...product, quantity: 1 }]);
 	};
 
 	console.log('cart', cart);
@@ -21,14 +21,24 @@ const App = () => {
 	return (
 		<>
 			<GlobalStyles />
-			<Header setFilter={setFilter} />
+			<Header setFilter={setFilter} filter={filter} />
 			<Main>
 				<ProductContainer
+					isProductInCart={isProductInCart}
+					removeItem={removeItem}
+					cart={cart}
+					setCart={setCart}
 					filter={filter}
 					addToCart={addToCart}
 					products={filterProducts(PRODUCTS, filter)}
 				/>
-				<Cart />
+
+				<Cart
+					isProductInCart={isProductInCart}
+					removeItem={removeItem}
+					cart={cart}
+					setCart={setCart}
+				/>
 			</Main>
 		</>
 	);
@@ -45,4 +55,14 @@ const filterProducts = (products, filter) => {
 		return newPRODUCTS.sort((a, b) => a.price - b.price);
 	}
 	return newPRODUCTS;
+};
+
+const removeItem = (id, cart, setCart) => {
+	const updatedCart = cart.filter(item => item.id !== id);
+	setCart(updatedCart);
+};
+
+const isProductInCart = (id, cart) => {
+	const productInCart = cart.find(item => item.id === id);
+	return productInCart;
 };

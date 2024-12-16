@@ -23,51 +23,62 @@ import {
 	StyledTotalPrice
 } from './cart.styles';
 
-const Cart = ({ product, cart }) => {
-	const { name, price, quantity } = product;
-	const { totalPrice, totaProducts } = cart;
+const Cart = ({ setCart, cart, removeItem }) => {
+	const isCartEmpty = cart.length === 0;
 	return (
 		<StyledCartContainer>
-			<StyledCardTitle> Your Cart ({totaProducts}) </StyledCardTitle>
-			<StyledEmptyCart>
-				<StyledImgCart
-					src='public/assets/images/illustration-empty-cart.svg'
-					alt='Empty cart'
-				/>
-				<StyledEmptyCartText>
-					Your added items will appear here
-				</StyledEmptyCartText>
-			</StyledEmptyCart>
-			<StyledFullCart>
-				<StyledCartItemsBox>
-					<StyledItem>
-						<StyledItemInfo>
-							<StyledTitleCart>{name}</StyledTitleCart>
-							<StyledCuantityBox>
-								<StyledCuantityCart>{quantity}x</StyledCuantityCart>
-								<StyledPriceCart1>@${price.toFixed(2)}</StyledPriceCart1>
-								<StyledPriceCart2>${price.toFixed(2)}</StyledPriceCart2>
-							</StyledCuantityBox>
-						</StyledItemInfo>
-						<StyledRemoveCart
-							src='public/assets/images/icon-remove-item.svg'
-							alt='Remove item'
-						/>
-					</StyledItem>
-				</StyledCartItemsBox>
-				<StyledTotal>
-					<StyledOrderTotal>Order Total</StyledOrderTotal>
-					<StyledTotalPrice>{totalPrice}</StyledTotalPrice>
-				</StyledTotal>
-				<StyledCarbon>
-					<img src='public/assets/images/icon-carbon-neutral.svg' alt='' />
-					<StyledCarbonText>
-						This is a <StyledCarbonTxtBold>carbon-neutral </StyledCarbonTxtBold>
-						delivery
-					</StyledCarbonText>
-				</StyledCarbon>
-				<StyledOrderButton>Confirm Order</StyledOrderButton>
-			</StyledFullCart>
+			<StyledCardTitle> Your Cart ({cart.length}) </StyledCardTitle>
+			{isCartEmpty && (
+				<StyledEmptyCart>
+					<StyledImgCart
+						src='public/assets/images/illustration-empty-cart.svg'
+						alt='Empty cart'
+					/>
+					<StyledEmptyCartText>
+						Your added items will appear here
+					</StyledEmptyCartText>
+				</StyledEmptyCart>
+			)}
+			{!isCartEmpty && (
+				<StyledFullCart>
+					<StyledCartItemsBox>
+						{cart.map(item => (
+							<StyledItem key={item.id}>
+								<StyledItemInfo>
+									<StyledTitleCart>{item.name}</StyledTitleCart>
+									<StyledCuantityBox>
+										<StyledCuantityCart>{item.quantity}x</StyledCuantityCart>
+										<StyledPriceCart1>
+											@${item.price.toFixed(2)}
+										</StyledPriceCart1>
+										<StyledPriceCart2>
+											${item.price.toFixed(2)}
+										</StyledPriceCart2>
+									</StyledCuantityBox>
+								</StyledItemInfo>
+								<StyledRemoveCart
+									onClick={() => removeItem(item.id, cart, setCart)}
+									src='public/assets/images/icon-remove-item.svg'
+									alt='Remove item'
+								/>
+							</StyledItem>
+						))}
+					</StyledCartItemsBox>
+					<StyledTotal>
+						<StyledOrderTotal>Order Total</StyledOrderTotal>
+						<StyledTotalPrice></StyledTotalPrice>
+					</StyledTotal>
+					<StyledCarbon>
+						<img src='public/assets/images/icon-carbon-neutral.svg' alt='' />
+						<StyledCarbonText>
+							This is a{' '}
+							<StyledCarbonTxtBold>carbon-neutral </StyledCarbonTxtBold>
+							delivery
+						</StyledCarbonText>
+					</StyledCarbon>
+					<StyledOrderButton>Confirm Order</StyledOrderButton>
+				</StyledFullCart>
+			)}
 		</StyledCartContainer>
 	);
 };

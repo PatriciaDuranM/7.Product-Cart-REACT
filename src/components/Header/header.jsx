@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
 	StyledFilterBox,
 	StyledHeader,
@@ -6,37 +5,31 @@ import {
 	SytledTitle
 } from './header.styles';
 
-const Header = ({ setFilter }) => {
-	const [filterActive, setFilterActive] = useState('default');
-
+const Header = ({ setFilter, filter }) => {
 	/*filtro y actualización de estado*/
-	const filterChange = (filter) => {
-		setFilterActive(filter);
-		setFilter(filter);
-	};
 
 	return (
 		<StyledHeader>
 			<SytledTitle>Desserts</SytledTitle>
 			<StyledFilterBox>
 				<SytledChipFilter
-					$active={filterActive === 'default'}
+					$active={filter}
 					$state={'default'}
-					onClick={() => filterChange('default')}
+					onClick={() => setFilter('default')}
 				>
 					Default
 				</SytledChipFilter>
 				<SytledChipFilter
-					$active={filterActive === 'name'}
+					$active={filter}
 					$state={'name'}
-					onClick={() => filterChange('name')}
+					onClick={() => setFilter('name')}
 				>
 					Name
 				</SytledChipFilter>
 				<SytledChipFilter
-					$active={filterActive === 'price'}
+					$active={filter}
 					$state={'price'}
-					onClick={() => filterChange('price')}
+					onClick={() => setFilter('price')}
 				>
 					Price
 				</SytledChipFilter>
