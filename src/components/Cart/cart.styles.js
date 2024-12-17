@@ -107,7 +107,7 @@ const StyledPriceCart1 = styled.span`
 	color: ${COLORS.mediumBrown};
 `;
 const StyledPriceCart2 = styled(StyledPriceCart1)`
-	color: ${COLORS.mediumBrown};
+	font-weight: ${FONT_WEIGHT.semibold};
 `;
 const StyledRemoveCart = styled.img`
 	width: 18px;

@@ -25,6 +25,12 @@ import {
 
 const Cart = ({ setCart, cart, removeItem }) => {
 	const isCartEmpty = cart.length === 0;
+	const totalPrice = cart => {
+		return cart.reduce(
+			(acc, product) => acc + product.price * product.quantity,
+			0
+		);
+	};
 	return (
 		<StyledCartContainer>
 			<StyledCardTitle> Your Cart ({cart.length}) </StyledCardTitle>
@@ -66,7 +72,7 @@ const Cart = ({ setCart, cart, removeItem }) => {
 					</StyledCartItemsBox>
 					<StyledTotal>
 						<StyledOrderTotal>Order Total</StyledOrderTotal>
-						<StyledTotalPrice></StyledTotalPrice>
+						<StyledTotalPrice>${totalPrice(cart).toFixed(2)}</StyledTotalPrice>
 					</StyledTotal>
 					<StyledCarbon>
 						<img src='public/assets/images/icon-carbon-neutral.svg' alt='' />
