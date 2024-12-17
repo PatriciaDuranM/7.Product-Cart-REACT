@@ -106,7 +106,7 @@ const StyledPriceCart1 = styled.span`
 	font-weight: ${FONT_WEIGHT.regular};
 	color: ${COLORS.mediumBrown};
 `;
-const StyledPriceCart2 = styled(StyledPriceCart1)`
+const StyledPriceTotalProduct = styled(StyledPriceCart1)`
 	font-weight: ${FONT_WEIGHT.semibold};
 `;
 const StyledRemoveCart = styled.img`
@@ -177,7 +177,7 @@ export {
 	StyledTitleCart,
 	StyledCuantityBox,
 	StyledPriceCart1,
-	StyledPriceCart2,
+	StyledPriceTotalProduct,
 	StyledRemoveCart,
 	StyledTotalPrice,
 	StyledOrderTotal,

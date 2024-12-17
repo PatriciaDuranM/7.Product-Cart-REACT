@@ -13,14 +13,13 @@ const ProductContainer = ({
 		<StyledProductContainer>
 			{products.map(product => (
 				<Product
-					removeItem={removeItem}
-					isProductInCart={isProductInCart}
 					key={product.id}
-					product={product}
-					addToCart={addToCart}
 					cart={cart}
 					setCart={setCart}
-					{...product}
+					isProductInCart={isProductInCart}
+					product={product}
+					addToCart={addToCart}
+					removeItem={removeItem}
 				/>
 			))}
 		</StyledProductContainer>

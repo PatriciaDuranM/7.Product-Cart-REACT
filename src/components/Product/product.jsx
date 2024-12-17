@@ -45,7 +45,11 @@ const Product = ({
 					<source media='(min-width:1024px)' srcSet={imgDesk} />
 					<source media='(min-width:786px)' srcSet={imgTab} />
 					<source media='(min-width:320px)' srcSet={imgMob} />
-					<StyledProductImg src={imgMob} alt={alt}></StyledProductImg>
+					<StyledProductImg
+						src={imgMob}
+						alt={alt}
+						$productInCart={productInCart}
+					></StyledProductImg>
 				</picture>
 				{productInCart && (
 					<StyledQuantityButton>

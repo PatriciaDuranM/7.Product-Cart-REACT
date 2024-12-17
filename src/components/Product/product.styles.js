@@ -27,6 +27,9 @@ const StyledProductImg = styled.img`
 	width: 327px;
 	height: 212px;
 	border-radius: 8px;
+	border: 2px solid
+		${({ $productInCart }) => ($productInCart ? COLORS.red : 'transparent')};
+
 	@media screen and (width>768px) {
 		width: 213px;
 		height: 212px;
@@ -69,7 +72,7 @@ const StyledAddButton = styled(StyledButton)`
 	border-radius: 999px;
 	gap: 8px;
 	padding-left: 24px;
-	padding-top: 12px;
+	padding-top: 4px;
 `;
 
 const StyledQuantityButton = styled(StyledButton)`
