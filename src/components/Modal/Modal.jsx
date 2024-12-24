@@ -13,6 +13,8 @@ import {
 	StyledProductName,
 	StyledProductsBox,
 	StyledQuantity,
+	StyledTick,
+	StyledTopModal,
 	StyledTotal,
 	StyledTotalPrice,
 	StyledTotaProductPrice
@@ -24,6 +26,9 @@ const Modal = ({ children, setModalOpen, setCart, cart }) => {
 	return createPortal(
 		<StyledBackground>
 			<StyledModal>
+				<StyledTopModal>
+					<StyledTick src='public/assets/images/icon-order-confirmed.svg' />
+				</StyledTopModal>
 				<img src='public/assets/images/icon-order-confirmed.svg' alt='' />
 				<h1>OrderConfirmed</h1>
 				<span>We hope you enjoy your food</span>

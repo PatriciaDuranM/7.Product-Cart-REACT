@@ -10,7 +10,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-waffle-mobile.jpg',
 		imgTab: '/assets/images/image-waffle-tablet.jpg',
 		imgDesk: '/assets/images/image-waffle-desktop.jpg',
-		alt: 'A waffle tower with sliced strawberries and icing sugar.'
+		alt: 'A waffle tower with sliced strawberries and icing sugar.',
+		thumb: '/assets/images/image-waffle-thumbnail.jpg'
 	},
 
 	{
@@ -22,7 +23,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-creme-brulee-mobile.jpg',
 		imgTab: '/assets/images/image-creme-brulee-tablet.jpg',
 		imgDesk: '/assets/images/image-creme-brulee-desktop.jpg',
-		alt: 'Two dishes of crréme brûlée topped with berries, figs and mint.'
+		alt: 'Two dishes of crréme brûlée topped with berries, figs and mint.',
+		thumb: '/assets/images/image-creme-brulee-thumbnail.jpg'
 	},
 
 	{
@@ -34,7 +36,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-macaron-mobile.jpg',
 		imgTab: '/assets/images/image-macaron-tablet.jpg',
 		imgDesk: '/assets/images/image-macaron-desktop.jpg',
-		alt: 'Five diferent flavour macarons.'
+		alt: 'Five diferent flavour macarons.',
+		thumb: '/assets/images/image-macaron-thumbnail.jpg'
 	},
 
 	{
@@ -46,7 +49,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-tiramisu-mobile.jpg',
 		imgTab: '/assets/images/image-tiramisu-tablet.jpg',
 		imgDesk: '/assets/images/image-tiramisu-desktop.jpg',
-		alt: 'A tiramusú topped with berries, mint and cocoa powder.'
+		alt: 'A tiramusú topped with berries, mint and cocoa powder.',
+		thumb: '/assets/images/image-tiramisu-thumbnail.jpg'
 	},
 
 	{
@@ -58,7 +62,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-baklava-mobile.jpg',
 		imgTab: '/assets/images/image-baklava-tablet.jpg',
 		imgDesk: '/assets/images/image-baklava-desktop.jpg',
-		alt: 'Three triangle shaped baklavas topped with crushed pistachos.'
+		alt: 'Three triangle shaped baklavas topped with crushed pistachos.',
+		thumb: '/assets/images/image-baklava-thumbnail.jpg'
 	},
 
 	{
@@ -70,7 +75,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-meringue-mobile.jpg',
 		imgTab: '/assets/images/image-meringue-tablet.jpg',
 		imgDesk: '/assets/images/image-meringue-desktop.jpg',
-		alt: 'A slice of lemon pie coronated with meringue.'
+		alt: 'A slice of lemon pie coronated with meringue.',
+		thumb: '/assets/images/image-meringue-thumbnail.jpg'
 	},
 
 	{
@@ -82,7 +88,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-cake-mobile.jpg',
 		imgTab: '/assets/images/image-cake-tablet.jpg',
 		imgDesk: '/assets/images/image-cake-desktop.jpg',
-		alt: 'Red velvet cake portion withb sliced strawberries on the inside and a berrie on top.'
+		alt: 'Red velvet cake portion withb sliced strawberries on the inside and a berrie on top.',
+		thumb: '/assets/images/image-cake-thumbnail.jpg'
 	},
 
 	{
@@ -94,7 +101,8 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-brownie-mobile.jpg',
 		imgTab: '/assets/images/image-brownie-tablet.jpg',
 		imgDesk: '/assets/images/image-brownie-desktop.jpg',
-		alt: 'A portion of brownie with a vanilla ice cream and caramel sirup.'
+		alt: 'A portion of brownie with a vanilla ice cream and caramel sirup.',
+		thumb: '/assets/images/image-brownie-thumbnail.jpg'
 	},
 
 	{
@@ -106,6 +114,7 @@ export const PRODUCTS = [
 		imgMob: '/assets/images/image-panna-cotta-mobile.jpg',
 		imgTab: '/assets/images/image-panna-cotta-tablet.jpg',
 		imgDesk: '/assets/images/image-panna-cotta-desktop.jpg',
-		alt: 'Two cristal jars of pannacotta with cream.'
+		alt: 'Two cristal jars of pannacotta with cream.',
+		thumb: '/assets/images/image-panna-cotta-thumbnail.jpg'
 	}
 ];

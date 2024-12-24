@@ -25,6 +25,30 @@ const StyledModal = styled.div`
 	border-radius: 12px;
 	gap: 24px;
 `;
+
+const StyledTopModal = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+`;
+
+const StyledTick = styled.img`
+	width: 48px;
+	height: 48px;
+`;
+
+const StyledTitle = styled.h2`
+	font-size: 40px;
+	font-weight: ${FONT_WEIGHT.bold};
+	color: ${COLORS.darkbrown};
+`;
+
+const StyledText = styled.span`
+	font-size: 16px;
+	font-weight: ${FONT_WEIGHT.regular};
+	color: ${COLORS.mediumBrown};
+`;
+
 const StyledBox = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -134,5 +158,9 @@ export {
 	StyledQuantity,
 	StyledPrice,
 	StyledTotaProductPrice,
-	StyledButton
+	StyledButton,
+	StyledTopModal,
+	StyledTick,
+	StyledTitle,
+	StyledText
 };
