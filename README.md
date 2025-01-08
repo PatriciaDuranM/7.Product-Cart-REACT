@@ -1,7 +1,7 @@
 # PRODUCT LIST WITH CART
 
 <p>
-    <img src="" alt="Imagen del proyecto">
+    <img src="https://raw.githubusercontent.com/PatriciaDuranM/7.Product-Cart-REACT/refs/heads/main/design/desktop-design-order-confirmation.jpg" alt="Imagen del proyecto">
 </p>
 
 ## Vista en vivo
